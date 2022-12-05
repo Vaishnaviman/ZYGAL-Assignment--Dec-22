@@ -1,0 +1,98 @@
+import {View, Text, Button} from 'react-native';
+import { useState } from 'react';
+import React from 'react';
+
+export default function App() {
+
+  const [red,setRed]= useState("red")
+  const [yellow,setYellow]= useState("yellow")
+  const [orange,setOrange]= useState("orange")
+  const [green,setGreen]= useState("green")
+
+  return (
+    <View style={{justifyContent: 'center'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignContent: 'center',
+        }}>
+        <Text
+          style={{
+            textAlign:"center",
+            color:"black",
+            fontSize:50,
+            margin: 10,
+            height: 150,
+            width: 150,
+            backgroundColor: red,
+            borderWidth: 5,
+          }}>
+          1
+        </Text>
+        <Text
+          style={{
+            textAlign:"center",
+            color:"black",
+            fontSize:50,
+            margin: 10,
+            height: 150,
+            width: 150,
+            backgroundColor: yellow,
+            borderWidth: 5,
+          }}>
+          2
+        </Text>
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignContent: 'center',
+        }}>
+        <Text
+          style={{
+            textAlign:"center",
+            color:"black",
+            fontSize:50,
+            margin: 10,
+            height: 150,
+            width: 150,
+            backgroundColor: orange,
+            borderWidth: 5,
+          }}>
+          3
+        </Text>
+        <Text
+          style={{
+            textAlign:"center",
+            color:"black",
+            fontSize:50,
+            margin: 10,
+            height: 150,
+            width: 150,
+            backgroundColor: green,
+            borderWidth: 5,
+          }}>
+          4
+        </Text>
+      </View>
+      <View style={{marginHorizontal:50,justifyContent:"center",marginTop:50}}>
+        <Button title="Clockwise"  onPress={()=>{
+          setRed(orange)
+          setYellow(red)
+          setGreen(yellow)
+          setOrange(green)
+        }}/>
+      </View>
+      <View style={{marginHorizontal:50,justifyContent:"center",marginTop:20}}>
+        <Button title="Anti-Clockwise" onPress={()=>{
+          setRed(yellow)
+          setYellow(green)
+          setGreen(orange)
+          setOrange(red)
+        }}/>
+      </View>
+    </View>
+  );
+}
